@@ -3,6 +3,7 @@ import {ReactComponent as Logo} from "assets/logo.svg";
 import styles from "./Cardapio.module.scss";
 import { useState } from "react";
 import Filtros from "./Filtros";
+import Ordenador from "./Ordenador";
 
 export default function Cardapio(){
   const [ busca, setBusca ] = useState<string>('');
@@ -30,8 +31,9 @@ export default function Cardapio(){
           setBusca={setBusca}
         />
 
-        <div className={styles.cardaprio__filtros}>
+        <div className={styles.cardapio__filtros}>
           <Filtros filtro={filtro} setFiltro={setFiltro}/>
+          <Ordenador />
         </div>
       </section>
     </main>
