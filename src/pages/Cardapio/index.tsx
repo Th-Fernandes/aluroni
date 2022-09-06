@@ -4,10 +4,12 @@ import styles from "./Cardapio.module.scss";
 import { useState } from "react";
 import Filtros from "./Filtros";
 import Ordenador from "./Ordenador";
+import Items from "pages/Cardapio/Items";
 
 export default function Cardapio(){
   const [ busca, setBusca ] = useState<string>('');
   const [ filtro, setFiltro] = useState<number | null>(null);
+  const [ordenador, setOrdenador] = useState<string>('');
 
   return ( 
     <main>
@@ -33,8 +35,10 @@ export default function Cardapio(){
 
         <div className={styles.cardapio__filtros}>
           <Filtros filtro={filtro} setFiltro={setFiltro}/>
-          <Ordenador />
+          <Ordenador  ordenador={ordenador} setOrdenador={setOrdenador}/>
         </div>
+
+        <Items/>
       </section>
     </main>
   )
