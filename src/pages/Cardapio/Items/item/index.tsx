@@ -1,5 +1,5 @@
-import styles from "./Item.module.scss"
-import classNames from "classnames";
+import styles from './Item.module.scss';
+import classNames from 'classnames';
 
 interface Items {
   title: string,
@@ -17,14 +17,14 @@ interface Items {
 
 
 export default function Item(props:Items) {
-  const {title, description, size, serving, price, category, photo} = props
+  const {title, description, size, serving, price, category, photo} = props;
 
   function handlePlural(peopleQuantity:number) {
     const result = peopleQuantity > 1
       ? 'pessoas'
-      : 'pessoa'
+      : 'pessoa';
     
-      return result
+    return result;
   }
 
   return (

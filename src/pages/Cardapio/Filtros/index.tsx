@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import { Dispatch, SetStateAction } from "react";
-import styles from "./Filtros.module.scss";
-import filtros from "./filtros.json"
+import classNames from 'classnames';
+import { Dispatch, SetStateAction } from 'react';
+import styles from './Filtros.module.scss';
+import filtros from './filtros.json';
 
 // type IOpcao = typeof filtros[0];
 
@@ -13,9 +13,9 @@ interface Props {
 export default function Filtros({filtro, setFiltro}:Props) {
   function selecionarFiltro(opcao:number) {
     return setFiltro(opcaoAnterior => {
-      if (opcaoAnterior === opcao) return null
-      return opcao
-    })
+      if (opcaoAnterior === opcao) return null;
+      return opcao;
+    });
   }
 
   return (
@@ -30,10 +30,10 @@ export default function Filtros({filtro, setFiltro}:Props) {
               [styles['filtros__filtro--ativo']]: filtro === id
             })} 
             key={id}>
-              {label}
+            {label}
           </button>
         ))
       }
     </div>
-  )
+  );
 }
