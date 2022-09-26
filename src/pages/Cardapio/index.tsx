@@ -4,38 +4,31 @@ import { useState } from 'react';
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
 import Items from 'pages/Cardapio/Items';
+import stylesTheme from 'styles/Theme.module.scss';
 
-export default function Cardapio(){
-  const [ busca, setBusca ] = useState<string>('');
-  const [ filtro, setFiltro] = useState<number | null>(null);
+
+export default function Cardapio() {
+  const [busca, setBusca] = useState<string>('');
+  const [filtro, setFiltro] = useState<number | null>(null);
   const [ordenador, setOrdenador] = useState<string>('');
 
-  return ( 
-    <main>
-      
-      <header className={styles.header}>
-        <div className={styles.header__text}>
-          A casa do código e da massa.
-        </div>
-      </header>
+  return (
+    <section className={stylesTheme.container}>
+      <h3 className={stylesTheme.titulo}>
+        Cardápio
+      </h3>
 
-      <section className={styles.cardapio}>
-        <h3 className={styles.cardapio__titulo}>
-          Cardápio
-        </h3>
+      <Buscador
+        busca={busca}
+        setBusca={setBusca}
+      />
 
-        <Buscador
-          busca={busca}
-          setBusca={setBusca}
-        />
+      <div className={styles.cardapio__filtros}>
+        <Filtros filtro={filtro} setFiltro={setFiltro} />
+        <Ordenador ordenador={ordenador} setOrdenador={setOrdenador} />
+      </div>
 
-        <div className={styles.cardapio__filtros}>
-          <Filtros filtro={filtro} setFiltro={setFiltro}/>
-          <Ordenador  ordenador={ordenador} setOrdenador={setOrdenador}/>
-        </div>
-
-        <Items busca={busca} filtro={filtro} ordenador={ordenador}/>
-      </section>
-    </main>
+      <Items busca={busca} filtro={filtro} ordenador={ordenador} />
+    </section>
   );
 }
