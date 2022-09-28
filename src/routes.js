@@ -6,6 +6,7 @@ import { Sobre } from 'pages/Sobre';
 
 import  DefaultPage  from 'components/DefaultPage';
 import { Menu } from 'components/Menu';
+import { Footer } from 'components/Footer';
 
 export default function AppRouter() {
   return (
@@ -18,8 +19,8 @@ export default function AppRouter() {
             <Route path='cardapio' element={<Cardapio />} />
             <Route path='/sobre' element={<Sobre/>}/>
           </Route>
-
         </Routes>
+        <Footer />
       </Router>
     </main>
   );
