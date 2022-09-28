@@ -1,6 +1,7 @@
 import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
+import storePicture from 'assets/nossa_casa.png';
 
 export default function Inicio() {
   function PratosRecomendados() {
@@ -8,7 +9,7 @@ export default function Inicio() {
 
     return pratosRecomendados
       .sort(() => 0.5 - Math.random())
-      .splice(0,3);
+      .splice(0, 3);
   }
 
 
@@ -28,6 +29,14 @@ export default function Inicio() {
             </button>
           </div>
         ))}
+      </div>
+
+      <h3 className={stylesTheme.titulo}> Nossa casa </h3>
+      <div className={styles.nossaCasa}>
+        <img src={storePicture} alt="Casa do aluroni" />
+        <div className={styles.nossaCasa__endereco}>
+          Rua Vergueiro, 3185 <br /> <br /> Vila Mariana - SP
+        </div>
       </div>
     </section>
   );

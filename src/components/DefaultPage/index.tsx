@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import styles from './DefaultPage.module.scss';
+import stylesTheme from 'styles/Theme.module.scss';
 
 export default function DefaultPage() {
   return (
@@ -10,7 +11,9 @@ export default function DefaultPage() {
         </div>
       </header>
 
-      <Outlet/>
+      <div className={stylesTheme.container}>
+        <Outlet />
+      </div>
     </>
   );
 }

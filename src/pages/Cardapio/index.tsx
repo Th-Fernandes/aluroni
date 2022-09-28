@@ -13,7 +13,7 @@ export default function Cardapio() {
   const [ordenador, setOrdenador] = useState<string>('');
 
   return (
-    <section className={stylesTheme.container}>
+    <section>
       <h3 className={stylesTheme.titulo}>
         Cardápio
       </h3>
