@@ -2,8 +2,11 @@ import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
 import storePicture from 'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 export default function Inicio() {
+  const navigate = useNavigate();
+
   function PratosRecomendados() {
     const pratosRecomendados = [...cardapio];
 
@@ -12,6 +15,9 @@ export default function Inicio() {
       .splice(0, 3);
   }
 
+  function redirectToDetails(meal: typeof cardapio[0] ) {
+    navigate(`/prato/${meal.id}`, {state: {...meal}});
+  }
 
   return (
     <section>
@@ -24,7 +30,10 @@ export default function Inicio() {
               <img src={item.photo} alt={item.title} />
             </div>
 
-            <button className={styles.recomendado__botao}>
+            <button
+              onClick={() => redirectToDetails(item)}
+              className={styles.recomendado__botao}
+            >
               Ver mais
             </button>
           </div>
