@@ -16,7 +16,7 @@ export default function Inicio() {
   }
 
   function redirectToDetails(meal: typeof cardapio[0] ) {
-    navigate(`/prato/${meal.id}`, {state: {...meal}});
+    navigate(`/prato/${meal.id}`, {state: {meal}, /*replace: true */});
   }
 
   return (
