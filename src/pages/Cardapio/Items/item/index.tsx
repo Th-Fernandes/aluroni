@@ -1,22 +1,8 @@
 import styles from './Item.module.scss';
 import classNames from 'classnames';
+import { Meal } from 'types/Meal';
 
-interface Items {
-  title: string,
-  description: string,
-  photo: string,
-  size: number,
-  serving: number,
-  price: number,
-  // id: number,
-  category: {
-    id: number,
-    label: string
-  }
-}
-
-
-export default function Item(props:Items) {
+export default function Item(props:Meal) {
   const {title, description, size, serving, price, category, photo} = props;
 
   function handlePlural(peopleQuantity:number) {

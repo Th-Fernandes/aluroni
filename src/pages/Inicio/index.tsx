@@ -3,8 +3,9 @@ import styles from './inicio.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
 import storePicture from 'assets/nossa_casa.png';
 import { useNavigate } from 'react-router-dom';
+import { Meal } from 'types/Meal';
 
-export default function Inicio() {
+export default function Index() {
   const navigate = useNavigate();
 
   function PratosRecomendados() {
@@ -15,7 +16,7 @@ export default function Inicio() {
       .splice(0, 3);
   }
 
-  function redirectToDetails(meal: typeof cardapio[0] ) {
+  function redirectToDetails(meal:Meal) {
     navigate(`/prato/${meal.id}`, {state: {meal}, /*replace: true */});
   }
 
