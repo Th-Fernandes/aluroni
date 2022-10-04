@@ -1,17 +1,9 @@
 import styles from './Item.module.scss';
-import classNames from 'classnames';
 import { Meal } from 'types/Meal';
+import { TagsMeal } from 'components/TagsMeal';
 
-export default function Item(props:Meal) {
-  const {title, description, size, serving, price, category, photo} = props;
-
-  function handlePlural(peopleQuantity:number) {
-    const result = peopleQuantity > 1
-      ? 'pessoas'
-      : 'pessoa';
-    
-    return result;
-  }
+export default function Item(props: Meal) {
+  const { title, description, photo } = props;
 
   return (
     <div className={styles.item}>
@@ -23,17 +15,9 @@ export default function Item(props:Meal) {
           <h2> {title} </h2>
           <p> {description} </p>
         </div>
-        <div className={styles.item__tags}>
-          <div className={
-            classNames(
-              [styles.item__tipo],
-              [styles[`item__tipo__${category.label.toLowerCase()}`]]
-            )
-          }>{category.label}</div>
-          <div className={styles.item__porcao}>{size}g</div>
-          <div className={styles.item__qtdpessoas}>Serve {serving} {handlePlural(serving)}</div>
-          <div className={styles.item__valor}>R$ {price.toFixed(2)}</div>
-        </div>
+        <TagsMeal
+          {...props}
+        />
       </div>
     </div>
   );
