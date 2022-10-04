@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import cardapio from 'data/cardapio.json';
 import { TagsMeal } from 'components/TagsMeal';
 import NotFound from 'pages/NotFound';
+import DefaultPage from 'components/DefaultPage';
 
 export function Prato() {
   const navigate = useNavigate();
@@ -15,9 +16,11 @@ export function Prato() {
         meal 
           ?
           <>
+            <DefaultPage />
             <button className={styles.voltar} onClick={() => navigate(-1)}>
               {'< Voltar'}
             </button>
+
 
             <section className={styles.container}>
               <h1 className={styles.titulo}>
