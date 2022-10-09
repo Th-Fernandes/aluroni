@@ -1,3 +1,5 @@
+@import "./breakpoints";
+
 $padding-inline: 250px ;
 $padding-horizontal-mobile: 1.6rem;
 $padding-horizontal-tablet: 3.2rem;
@@ -14,7 +16,7 @@ $padding-horizontal: 250px;
   }
   @media (min-width: $desktop_sm) {
     padding-inline: $padding-horizontal-desktop;
-  }
+  }  
 }
 
 $dark: #242536;

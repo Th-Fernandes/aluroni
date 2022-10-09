@@ -1,10 +1,15 @@
 @import 'styles/variables';
 
+.recomendados_container {
+  @include defaultHorizontalPadding();
+}
+
 .recomendados {
   border-radius: 2px;
   display: flex;
   gap: 30px;
   overflow-x: auto;
+
 }
 .recomendado {
   &__imagem {
@@ -27,7 +32,7 @@
     
     font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 0;
+    padding: 1rem 0;
     transition: .2s ease;
     width: 100%;
     &:hover {

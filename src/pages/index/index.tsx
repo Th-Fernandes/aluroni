@@ -3,7 +3,7 @@ import type { Meal } from 'types/Meal';
 
 import storePicture from 'assets/nossa_casa.png';
 import cardapio from 'data/cardapio.json';
-import styles from './inicio.module.scss';
+import styles from './index.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
 
 export default function Index() {
@@ -22,7 +22,7 @@ export default function Index() {
   }
 
   return (
-    <section>
+    <section className={styles.recomendados_container}>
       <h3 className={stylesTheme.titulo}>Recomendações da cozinha</h3>
 
       <div className={styles.recomendados}>
