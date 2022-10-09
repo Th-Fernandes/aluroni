@@ -1,19 +1,20 @@
+import { useNavigate } from 'react-router-dom';
+import type { Meal } from 'types/Meal';
+
+import storePicture from 'assets/nossa_casa.png';
 import cardapio from 'data/cardapio.json';
 import styles from './inicio.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
-import storePicture from 'assets/nossa_casa.png';
-import { useNavigate } from 'react-router-dom';
-import { Meal } from 'types/Meal';
 
 export default function Index() {
   const navigate = useNavigate();
 
-  function PratosRecomendados() {
-    const pratosRecomendados = [...cardapio];
+  function recommendedMeals() {
+    const recommendedMeals = [...cardapio];
 
-    return pratosRecomendados
+    return recommendedMeals
       .sort(() => 0.5 - Math.random())
-      .splice(0, 3);
+      .splice(0, 4);
   }
 
   function redirectToDetails(meal:Meal) {
@@ -25,7 +26,7 @@ export default function Index() {
       <h3 className={stylesTheme.titulo}>Recomendações da cozinha</h3>
 
       <div className={styles.recomendados}>
-        {PratosRecomendados().map((item) => (
+        {recommendedMeals().map((item) => (
           <div key={item.id} className={styles.recomendado}>
             <div className={styles.recomendado__imagem}>
               <img src={item.photo} alt={item.title} />

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Cardapio from 'pages/Cardapio';
-import Inicio from 'pages/Inicio';
+import Inicio from 'pages/index';
 import { Sobre } from 'pages/Sobre';
 
 import  DefaultPage  from 'components/DefaultPage';

@@ -3,14 +3,17 @@
 .recomendados {
   border-radius: 2px;
   display: flex;
-  flex-wrap: wrap;
   gap: 30px;
-  justify-content: space-between;
+  overflow-x: auto;
 }
 .recomendado {
   &__imagem {
     width: 300px;
     margin-bottom: 10px;
+    @media(max-width:768px) {
+      width: 200px;
+    }
+
     img {
       border-radius: 8px;
       width: 100%;
