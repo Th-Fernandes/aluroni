@@ -6,6 +6,17 @@ $padding-horizontal-sm: 150px;
 $padding-horizontal-md: 200px;
 $padding-horizontal: 250px;
 
+@mixin defaultHorizontalPadding() {
+  padding-inline: $padding-horizontal-mobile;
+
+  @media (min-width: $tablet) {
+    padding-inline: $padding-horizontal-tablet;
+  }
+  @media (min-width: $desktop_sm) {
+    padding-inline: $padding-horizontal-desktop;
+  }
+}
+
 $dark: #242536;
 $dark-grey: #92929d;
 $grey: #e4e4e4;
