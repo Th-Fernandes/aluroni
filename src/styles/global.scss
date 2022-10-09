@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Italiana', serif;
+}
+
+#root > main.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  font-size: 62.5%;
+  background-color: #f6f6f6;
+
+  /* button config */
+  button {
+    cursor: pointer;
+  }
+  /* link config */
+  a {
+    cursor: pointer;
+  }
+}
+
+
