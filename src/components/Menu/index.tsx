@@ -5,18 +5,20 @@ import routes from './routes.json';
 
 export function Menu() {
   return (
-    <nav className={styles['menu']}>
-      <Logo />
+    <header>
+      <nav className={styles['menu']}>
+        <Logo />
 
-      <ul className={styles.menu__list}>
-        {
-          routes.map(route => (
-            <li className={styles.menu__link} key="route.id">
-              <Link  to={route.to}>{route.label}</Link>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+        <ul className={styles.menu__list}>
+          {
+            routes.map(route => (
+              <li className={styles.menu__link} key="route.id">
+                <Link to={route.to}>{route.label}</Link>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
   );
 }

@@ -12,8 +12,12 @@
   min-height: 100vh;
 }
 
-body {
+html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
   background-color: #f6f6f6;
 
   /* button config */
@@ -23,6 +27,12 @@ body {
   /* link config */
   a {
     cursor: pointer;
+  }
+  /* display config */
+  header, section {
+    width: 100%;
+    max-width: 122rem;
+    margin: 0 auto;
   }
 }
 
