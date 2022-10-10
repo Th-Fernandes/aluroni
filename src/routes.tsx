@@ -24,7 +24,7 @@ export default function AppRouter() {
           <Route path="prato/:id" element={<Prato/>}/>
           <Route path='*' element={<NotFound/>} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </main>
   );

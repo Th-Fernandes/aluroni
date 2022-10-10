@@ -4,7 +4,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import {MdKeyboardArrowUp ,MdKeyboardArrowDown} from 'react-icons/md';
 
-import styles from './Ordenador.module.scss';
+import styles from './sorter.module.scss';
 import options from './options.json';
 
 interface Props {
