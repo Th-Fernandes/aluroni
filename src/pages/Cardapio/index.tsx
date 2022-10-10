@@ -1,10 +1,12 @@
-import Buscador from './Buscador';
-import styles from './Cardapio.module.scss';
 import { useState } from 'react';
+
+import Items from 'pages/Cardapio/Items';
+import Buscador from './Buscador';
 import Filtros from './Filtros';
 import Ordenador from './Ordenador';
-import Items from 'pages/Cardapio/Items';
+
 import stylesTheme from 'styles/Theme.module.scss';
+import styles from './Cardapio.module.scss';
 
 
 export default function Cardapio() {
@@ -13,7 +15,7 @@ export default function Cardapio() {
   const [ordenador, setOrdenador] = useState<string>('');
 
   return (
-    <section>
+    <section className={styles.container}>
       <h3 className={stylesTheme.titulo}>
         Cardápio
       </h3>
