@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Items from 'pages/Cardapio/Items';
+import {Items} from 'pages/Cardapio/Items';
 import { SearchInput } from './SearchInput';
 import { Filters } from './Filters';
 import {SortByCategory} from './SortByCategory';
@@ -29,7 +29,7 @@ export default function Cardapio() {
         <SortByCategory category={category} setCategory={setCategory} />
       </div>
 
-      <Items busca={search} filtro={filter} ordenador={category} />
+      <Items search={search} filter={filter} sorter={category} />
     </section>
   );
 }

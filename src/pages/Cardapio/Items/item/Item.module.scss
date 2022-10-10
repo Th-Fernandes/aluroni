@@ -13,7 +13,7 @@
     background-color: $grey;
   }
 
-  &__imagem {
+  &__image {
     width: 100%;
     max-width: 24rem;
     margin: 0 auto;
@@ -23,7 +23,7 @@
     }
   }
 
-  &__descricao {
+  &__description {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -31,7 +31,7 @@
     min-width:  30rem;
   }
 
-  &__titulo {
+  &__title {
     h2 {
       font-size: 2rem;
       font-weight: bold;
