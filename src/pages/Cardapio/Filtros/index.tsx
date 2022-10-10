@@ -6,28 +6,28 @@ import filtros from './filtros.json';
 // type IOpcao = typeof filtros[0];
 
 interface Props {
-  filtro: number | null,
-  setFiltro: Dispatch<SetStateAction<number | null>>
+  filter: number | null,
+  setFilter: Dispatch<SetStateAction<number | null>>
 }
 
-export default function Filtros({filtro, setFiltro}:Props) {
+export function Filters({filter, setFilter}:Props) {
   function selecionarFiltro(opcao:number) {
-    return setFiltro(opcaoAnterior => {
+    return setFilter(opcaoAnterior => {
       if (opcaoAnterior === opcao) return null;
       return opcao;
     });
   }
 
   return (
-    <div className={styles.filtros}>
+    <div className={styles.filters}>
       {
         filtros.map(({label, id}) => (
           <button
             onClick={() => selecionarFiltro(id)}
              
             className={classNames({
-              [styles['filtros__filtro']]: true,
-              [styles['filtros__filtro--ativo']]: filtro === id
+              [styles['filters__filter']]: true,
+              [styles['filters__filter--active']]: filter === id
             })} 
             key={id}>
             {label}
