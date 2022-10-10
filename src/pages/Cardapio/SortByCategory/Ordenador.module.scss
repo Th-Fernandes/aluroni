@@ -1,32 +1,33 @@
 @import "styles/variables";
 
-.ordenador {
+.sort {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
+  min-width: 24rem;
+  height: 4rem;
+  padding: 0 4rem;
   background-color: $grey;
   border: none;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  display: flex;
-  font-size: 1rem;
+  border-radius: 0.4rem 0.4rem 0 0;
   font-weight: bold;
-  height: 40px;
-  justify-content: space-between;
-  min-width: 240px;
-  padding: 0 40px;
-  position: relative;
-  &--ativo {
+
+  &--active {
     background-color: $blue;
     color: white;
   }
+  
   &__options {
     display: none;
     position: absolute;
     left: 0;
-    flex-direction: column;
     top: 100%;
     width: 100%;
-    &--ativo {
+    
+    &--active {
       display: flex;
+      flex-direction: column;
     }
   }
   &__option {
