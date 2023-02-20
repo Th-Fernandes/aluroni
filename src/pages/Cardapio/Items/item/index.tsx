@@ -1,13 +1,15 @@
 import { useNavigate } from 'react-router-dom';
+import { memo } from 'react';
 
 import { TagsMeal } from 'components/TagsMeal';
 
 import { Meal } from 'types/Meal';
 import styles from './Item.module.scss';
 
-export function Item(props: Meal) {
-  const { title, description, photo } = props;
+function ItemComp(props: Meal) {
+  const { id ,title, description, photo } = props;
   const navigate = useNavigate();
+  console.log(title);
 
   return (
     <div
@@ -29,3 +31,5 @@ export function Item(props: Meal) {
     </div>
   );
 }
+
+export const Item = memo(ItemComp);
