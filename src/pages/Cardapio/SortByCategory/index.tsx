@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import classNames from 'classnames';
 import type { Dispatch, SetStateAction } from 'react';
 
@@ -12,7 +12,7 @@ interface Props {
   setCategory: Dispatch<SetStateAction<string>>
 }
 
-export function SortByCategory({category, setCategory}: Props) {
+function SortByCategoryComp({category, setCategory}: Props) {
   const [isSorterOpen, setIsSorterOpen] = useState(false);
   const getCategoriesName = category && options.find(opcao => opcao.value === category)?.nome;
   
@@ -48,3 +48,5 @@ export function SortByCategory({category, setCategory}: Props) {
     </button>
   );
 }
+
+export const SortByCategory = memo(SortByCategoryComp);

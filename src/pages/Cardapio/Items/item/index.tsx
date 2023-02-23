@@ -7,9 +7,8 @@ import { Meal } from 'types/Meal';
 import styles from './Item.module.scss';
 
 function ItemComp(props: Meal) {
-  const { id ,title, description, photo } = props;
+  const {title, description, photo } = props;
   const navigate = useNavigate();
-  console.log(title);
 
   return (
     <div

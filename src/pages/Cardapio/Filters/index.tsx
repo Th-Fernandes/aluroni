@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, memo, SetStateAction } from 'react';
 import styles from './Filtros.module.scss';
 import filtros from './filtros.json';
 
@@ -10,7 +10,7 @@ interface Props {
   setFilter: Dispatch<SetStateAction<number | null>>
 }
 
-export function Filters({filter, setFilter}:Props) {
+function FiltersComp({filter, setFilter}:Props) {
   function selecionarFiltro(opcao:number) {
     return setFilter(opcaoAnterior => {
       if (opcaoAnterior === opcao) return null;
@@ -37,3 +37,5 @@ export function Filters({filter, setFilter}:Props) {
     </div>
   );
 }
+
+export const Filters = memo(FiltersComp);
