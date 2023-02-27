@@ -1,4 +1,4 @@
-import {Dispatch, SetStateAction} from 'react';
+import {Dispatch, memo, SetStateAction, useMemo} from 'react';
 import styles from './Buscador.module.scss';
 import {CgSearch} from 'react-icons/cg';
 
@@ -7,7 +7,9 @@ interface Props {
   setSearch: Dispatch<SetStateAction<string>>
 }
 
-export function SearchInput({search, setSearch}:Props){
+function SearchInputComp({search, setSearch}:Props){
+  const memoizedSearchIcon = useMemo(() => <CgSearch size={20} color="#4c4d5e"/>, []);
+
   return (
     <div className={styles.buscador}>
       <input 
@@ -16,8 +18,9 @@ export function SearchInput({search, setSearch}:Props){
         type="text"
         placeholder="Buscar..." 
       />
-
-      <CgSearch size={20} color="#4c4d5e"/>
+      {memoizedSearchIcon}
     </div>
   );
 }
+
+export const SearchInput = memo(SearchInputComp);
