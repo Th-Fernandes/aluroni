@@ -8,7 +8,7 @@ interface Props {
 }
 
 function SearchInputComp({search, setSearch}:Props){
-  const memoizedSearchIcon = useMemo(() => <CgSearch size={20} color="#4c4d5e"/>, []);
+  const memoizedSearchIcon = useMemo(() => <CgSearch size={20} color="#4C4D5E" />, []);
 
   return (
     <div className={styles.buscador}>
