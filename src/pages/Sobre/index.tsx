@@ -6,7 +6,7 @@ import pasta2 from 'assets/sobre/pasta2.png';
 
 const images = [pasta1, pasta2];
 
-export function Sobre() {
+export default function Sobre() {
   return (
     <section>
       <h3 className={stylesTheme.titulo}>sobre</h3>
